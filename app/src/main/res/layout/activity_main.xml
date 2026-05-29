@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1a1a2e"
+    android:padding="16dp">
+
+    <!-- Верхняя панель -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Уровень:"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="#ffd700"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginRight="24dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ошибки:"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/textViewMistakes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 / 3"
+            android:textColor="#f44336"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <!-- Прогресс-бар времени -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Время:"
+        android:textColor="#aaaaaa"
+        android:textSize="14sp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBarTime"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:max="100"
+        android:progressTint="#4CAF50"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Счёт правильных ответов -->
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Правильно: 0"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Область вопроса -->
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Загрузка..."
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="#2a2a3a"
+        android:padding="32dp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Подсказка (что нужно делать) -->
+    <TextView
+        android:id="@+id/textViewHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Введите ответ:"
+        android:textColor="#aaaaaa"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Поле ввода ответа (теперь поддерживает отрицательные числа) -->
+    <EditText
+        android:id="@+id/editTextAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите число..."
+        android:inputType="numberSigned"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:drawable/editbox_background"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Кнопка проверки -->
+    <Button
+        android:id="@+id/buttonCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="✅ Проверить"
+        android:backgroundTint="#4CAF50"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Кнопки Да/Нет (для утверждений) -->
+    <LinearLayout
+        android:id="@+id/layoutYesNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/buttonYes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="✅ ДА"
+            android:backgroundTint="#4CAF50"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:layout_marginRight="8dp"/>
+
+        <Button
+            android:id="@+id/buttonNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="❌ НЕТ"
+            android:backgroundTint="#f44336"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:layout_marginLeft="8dp"/>
+
+    </LinearLayout>
+
+    <!-- Результат ответа -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="16sp"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
